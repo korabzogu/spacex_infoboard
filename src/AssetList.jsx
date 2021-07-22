@@ -174,14 +174,6 @@ const AssetList = () => {
                     </Text>
             </Card>
 
-            <Card
-                title='Rockets Fact'>
-                    <Text>The combined mass of all SpaceX Rockets is {combinedMass} kg. This corresponds 
-                      to the weight of {(combinedMass/2800000).toFixed(2)} Saturn V Rockets
-                    or {(combinedMass/2000000).toFixed(2)} Space Shuttles
-                    </Text>
-            </Card>
-
             {crew && crew.map((e) => {
                     return <Card
                     image={{ src: e.image}} 
