@@ -27,6 +27,7 @@ const AssetList = () => {
 
   const starlink = useSelector((state) => state.starlink.starlink);
   var starlinkCount = starlink && starlink.length;
+  console.log(starlink)
 
   useEffect(() => {
     dispatch(getAllCrew())
@@ -49,6 +50,8 @@ const AssetList = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
   var rocketsCount = rockets && rockets.length;
 
+  var combinedMass = 0;
+  rockets && rockets.forEach(e => combinedMass += parseInt(e.mass.kg))
 
     return (
 
@@ -165,17 +168,13 @@ const AssetList = () => {
             <div id="right">
 
             
-            {
-   
-                  () => {
-                      var combinedMass = 0;
-                      rockets && rockets.forEach(e => combinedMass + e.mass.kg)
-                      return <Card
-                      title='Rocket Fact'>
-                      <Text>The combined mass of all Rockets is {combinedMass} kg</Text>
-                      </Card>
-                    }
-                }
+            <Card
+                title='Rockets Fact'>
+                    <Text>The combined mass of all SpaceX Rockets is {combinedMass} kg. This corresponds 
+                      to the weight of {(combinedMass/2800000).toFixed(2)} Saturn V Rockets
+                    or {(combinedMass/2000000).toFixed(2)} Space Shuttles
+                    </Text>
+            </Card>
 
             {crew && crew.map((e) => {
                     return <Card
