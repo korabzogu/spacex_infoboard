@@ -1,9 +1,16 @@
 import axios from 'axios'
+import { baseurl, version } from '../../../api'
 
-// TODO parameters needed: asset type and id
 export function requestGetAllPayloads() {
     return axios.request({
         method: "get",
-        url: "https://api.spacexdata.com/v4/payloads"
+        url: baseurl + "/" + version + "/payloads"
+    })
+}
+
+export function requestGetSinglePayload(id) {
+    return axios.request({
+        method: "get",
+        url: baseurl + "/" + version + "/payloads:" + id
     })
 }
