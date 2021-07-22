@@ -1,0 +1,43 @@
+.arwes-button {
+    text-align: bottom;
+    
+}
+
+.accordion_list {
+    display: none;
+
+    text-align: left;
+    margin-left: -10px;
+    margin-top: 5px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    max-height: 300px;
+    min-height: 0px;
+    list-style-type:circle ;
+}
+
+#left {
+    float: left;
+    overflow: hidden;
+}
+
+#right {
+    overflow:hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+}
+
+.arwes-card__content, .arwes-card__picture {
+    width: 100%;
+}
+
+.arwes-card__picture {
+}
+
+.arwes-card {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
