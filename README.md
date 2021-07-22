@@ -1,6 +1,10 @@
-SpaceX Visualizer - A scifi themed web-based Visualizer using SpaceX API data
+SpaceX Infoboard - A react app using the spacex api to display data.
+
+SpaceX API: https://github.com/r-spacex/SpaceX-API
 
 Usage:
+
+npm install
 
 npm start
 
