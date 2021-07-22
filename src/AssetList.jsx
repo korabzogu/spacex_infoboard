@@ -8,8 +8,7 @@ import { useDispatch, useSelector} from 'react-redux'
 
 import './AssetList.css';
 
-import { Button, Card, List, Text } from '@arwes/core'
-import { FrameHexagon } from '@arwes/core/lib/FrameHexagon/FrameHexagon.component';
+import { Button, Card, Text } from '@arwes/core'
 
 const AssetList = () => {
   const dispatch = useDispatch();
@@ -57,117 +56,124 @@ const AssetList = () => {
 
         <React.Fragment>
             <div id="wrapper">
-            <div id="left">
-            <div>
-                <Button 
-                id='payload-button'
-                class='accordion_button' 
-                onClick={()=>{var e = document.getElementById('payload-list');
-                if(e.style.display === 'block') {
-                    e.style.display ='none';
-                } else {
-                    e.style.display = 'block';
-                }
-                    console.log(this)
-                }}
-                >
-                    Payloads ({payloadsCount})
-                </Button>
-                <ul class='accordion_list' id='payload-list'>
-                    {payloads && payloads.map((payload) => {
-                        return <li onMouseOver={()=>{console.log(payload)}} > {payload.name} </li>
-                    })}
-                </ul>
-            </div>
+                <div id="left">
+                    <div>
+                        <Button 
+                            id='payload-button'
+                            class='accordion_button' 
+                            onClick={()=>{var e = document.getElementById('payload-list');
+                                        if(e.style.display === 'block') {
+                                            e.style.display ='none';
+                                        } else {
+                                            e.style.display = 'block';
+                                        }
+                                    }}
+                        >
+                            Payloads ({payloadsCount})
+                        </Button>
+                        <ul class='accordion_list' id='payload-list'>
+                            {payloads && payloads.map((payload) => {
+                                return <li onMouseOver={()=>{console.log(payload)}} > {payload.name} </li>
+                            })}
+                        </ul>
+                    </div>
 
-            <div>
-                <Button 
-                id='starlink-button'
-                class='accordion_button' 
-                onClick={()=>{var e = document.getElementById('starlink-list');
-                if(e.style.display === 'block') {
-                    e.style.display ='none';
-                } else {
-                    e.style.display = 'block';
-                }
-                }}
-                >Starlink ({starlinkCount}) 
-                </Button>
-                <ul class='accordion_list' id='starlink-list'>
-                {starlink && starlink.map((e) => {
-                    return <li> {e.spaceTrack.OBJECT_NAME} </li>
-                })}
-                </ul>
-            </div>
+                    <div>
+                        <Button 
+                            id='starlink-button'
+                            class='accordion_button' 
+                            onClick={()=>{var e = document.getElementById('starlink-list');
+                                        if(e.style.display === 'block') {
+                                            e.style.display ='none';
+                                        } else {
+                                            e.style.display = 'block';
+                                        }
+                                    }}
+                        >
+                            Starlink ({starlinkCount}) 
+                        </Button>
+                        <ul class='accordion_list' id='starlink-list'>
+                            {starlink && starlink.map((e) => {
+                                return <li> {e.spaceTrack.OBJECT_NAME} </li>
+                            })}
+                        </ul>
+                    </div>
 
-            <div>
-                <Button 
-                id='crew-button'
-                class='accordion_button' 
-                onClick={()=>{var e = document.getElementById('crew-list');
-                if(e.style.display === 'block') {
-                    e.style.display ='none';
-                } else {
-                    e.style.display = 'block';
-                }
-                }}
-                >Crew ({crewCount}) 
-                </Button>
-                <ul class='accordion_list' id='crew-list'>
-                {crew && crew.map((e) => {
+                    <div>
+                        <Button 
+                            id='crew-button'
+                            class='accordion_button' 
+                            onClick={()=>{var e = document.getElementById('crew-list');
+                                if(e.style.display === 'block') {
+                                    e.style.display ='none';
+                                } else {
+                                    e.style.display = 'block';
+                                }
+                            }}
+                        >
+                            Crew ({crewCount}) 
+                        </Button>
+                        <ul class='accordion_list' id='crew-list'>
+                            {crew && crew.map((e) => {
+                                return <li> {e.name} </li>
+                            })}
+                        </ul>
+                    </div>
 
-                    return <li> {e.name} </li>
-                })}
-                </ul>
-            </div>
+                    <div>
+                        <Button 
+                            id='dragons-button'
+                            class='accordion_button' 
+                            onClick={()=>{var e = document.getElementById('dragons-list');
+                                if(e.style.display === 'block') {
+                                    e.style.display ='none';
+                            } else {
+                                e.style.display = 'block';
+                            }
+                            }}
+                        >
+                            Dragons ({dragonsCount}) 
+                        </Button>
+                        <ul class='accordion_list' id='dragons-list'>
+                            {dragons && dragons.map((e) => {
+                                return <li> {e.name} </li>
+                        })}
+                        </ul>
+                    </div>
 
-            <div>
-                <Button 
-                id='dragons-button'
-                class='accordion_button' 
-                onClick={()=>{var e = document.getElementById('dragons-list');
-                if(e.style.display === 'block') {
-                    e.style.display ='none';
-                } else {
-                    e.style.display = 'block';
-                }
-                }}
-                >Dragons ({dragonsCount}) 
-                </Button>
-                <ul class='accordion_list' id='dragons-list'>
-                {dragons && dragons.map((e) => {
+                    <div>
+                        <Button 
+                            id='rockets-button'
+                            class='accordion_button' 
+                            onClick={()=>{var e = document.getElementById('rockets-list');
+                                if(e.style.display === 'block') {
+                                    e.style.display ='none';
+                                } else {
+                                    e.style.display = 'block';
+                                }
+                            }}
+                        >
+                            Rockets ({rocketsCount}) 
+                        </Button>
+                        <ul class='accordion_list' id='rockets-list'>
+                            {rockets && rockets.map((e) => {
+                                return <li> {e.name} </li>
+                            })}
+                        </ul>
+                    </div>
 
-                    return <li> {e.name} </li>
-                })}
-                </ul>
-            </div>
+                    </div>
 
-            <div>
-                <Button 
-                id='rockets-button'
-                class='accordion_button' 
-                onClick={()=>{var e = document.getElementById('rockets-list');
-                if(e.style.display === 'block') {
-                    e.style.display ='none';
-                } else {
-                    e.style.display = 'block';
-                }
-                }}
-                >Rockets ({rocketsCount}) 
-                </Button>
-                <ul class='accordion_list' id='rockets-list'>
-                {rockets && rockets.map((e) => {
+                    <div id="right">
 
-                    return <li> {e.name} </li>
-                })}
-                </ul>
-            </div>
+            <Card
+                title='Rockets Fact'>
+                    <Text>The combined mass of all SpaceX Rockets is {combinedMass} kg. This corresponds 
+                      to the weight of {(combinedMass/2800000).toFixed(2)} Saturn V Rockets
+                    or {(combinedMass/2000000).toFixed(2)} Space Shuttles
+                    </Text>
+            </Card>
 
-            </div>
-
-            <div id="right">
-
-            
             <Card
                 title='Rockets Fact'>
                     <Text>The combined mass of all SpaceX Rockets is {combinedMass} kg. This corresponds 
@@ -246,8 +252,6 @@ const AssetList = () => {
                 })} 
 
 
-
-              {/* FUN FACT CARDS */}
 
 
             </div>
